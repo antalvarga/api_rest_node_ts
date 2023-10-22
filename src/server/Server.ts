@@ -1,5 +1,8 @@
 import express from 'express';
 
+import './services/TranslationsYup';
+
+
 // Aula05 06:20
 import { router } from '../routes';
 

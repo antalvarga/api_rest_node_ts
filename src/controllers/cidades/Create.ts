@@ -11,6 +11,7 @@ import { validation } from '../../server/shared/middlewares';
 
 // Aula09 13:40 - Validação 
 import * as yup from 'yup';
+import { StatusCodes } from 'http-status-codes';
 
 
 interface ICidade {
@@ -34,11 +35,13 @@ const bodyValidation : yup.Schema< ICidade > = yup.object().shape({
 */
 // Aula11 18:47 - interface
 // AULA12 44:28 - limit
+// Aula13 - Remover query 
+/*
 interface IFilter {
     filter?: string;
     // limit?: number;
 }
-
+*/
 // Aula11 18:15 - queryValidation
 // Aula12 24:31 - Comentar queryValidation
 /*
@@ -159,12 +162,15 @@ export const createValidation = validation( ( getSchema ) => ( {
             .required()
             .min(2)
     })),
+    // Aula13 - Remover query 
+    /*
     query: getSchema< IFilter >( yup.object().shape({
         filter: yup
             .string()
             .optional()
             .min(3),
     })),
+    */
 }));
 
 
@@ -187,7 +193,9 @@ const create : RequestHandler = async ( req: Request<{},{}, ICidade >, res: Resp
     // Aula11 05:43 - Recortou o try e criou o middleware createBoddyValidator
     console.log( req.body );
     
-    return( res.send('cidades : controllers : create :: OK ') );
+    // Aula13 04:00 - StatusCodes.INTERNAL_SERVER_ERROR
+    // return( res.send('cidades : controllers : create :: OK ') );
+    return( res.status( StatusCodes.INTERNAL_SERVER_ERROR ).send( 'Não implementado!') );
 };
 
 export { create } ;

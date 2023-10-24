@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { StatusCodes } from 'http-status-codes';
+// import { StatusCodes } from 'http-status-codes';
 
 import { CidadesController } from '../controllers';
 
@@ -46,8 +46,29 @@ router.post( '/cidades'
     , CidadesController.create 
 );
 
+// 
+// Aula13 09:45 - Alterar ../src/routes - getAll
+router.get( '/cidades'
+    , CidadesController.getAllValidation
+    , CidadesController.getAll
+);
 
+// Aula14 05:10 - Alterar ../src/routes - getById
+router.get( '/cidades/:id' 
+    , CidadesController.getByIdValidation
+    , CidadesController.getById
+);
 
+// Aula14 12:01 -  Alterar ../src/routes - updateById
+router.put( '/cidades/:id'
+    , CidadesController.updateByIdValidation
+    , CidadesController.updateById
+);
+
+router.delete( '/cidades/:id'
+    , CidadesController.deleteByIdValidation
+    , CidadesController.deleteById
+);
 
 
 

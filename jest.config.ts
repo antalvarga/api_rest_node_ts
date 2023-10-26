@@ -173,11 +173,10 @@ const config: Config = {
     // testRunner: "jest-circus/runner",
 
     // A map from regular expressions to paths to transformers
-    // Aula15 14:14
+    // Aula15 14:14    
     transform: {
-        'ˆ.+\\.(ts|tsx)$': 'ts-jest'
+        '^.+\\.(ts|tsx)$': 'ts-jest'
     },
-
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
     // transformIgnorePatterns: [
     //   "/node_modules/",
@@ -195,6 +194,7 @@ const config: Config = {
 
     // Whether to use watchman for file crawling
     // watchman: true,
+
 };
 
 export default config;

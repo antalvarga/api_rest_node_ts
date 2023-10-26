@@ -1,5 +1,5 @@
 import * as deleteById from './deleteById';
-import * as updateById from './updateByid';
+import * as updateById from './updateById';
 import * as create from './Create';
 // Aula13 09:20 - Alterar ../controllers/cidades/index.ts
 import * as getAll from './GetAll';

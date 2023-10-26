@@ -196,6 +196,7 @@ const create : RequestHandler = async ( req: Request<{},{}, ICidade >, res: Resp
     // Aula13 04:00 - StatusCodes.INTERNAL_SERVER_ERROR
     // return( res.send('cidades : controllers : create :: OK ') );
     return( res.status( StatusCodes.INTERNAL_SERVER_ERROR ).send( 'Não implementado!') );
+    // return( res.status( StatusCodes.CREATED ).send( 'Não implementado!') );
 };
 
 export { create } ;
